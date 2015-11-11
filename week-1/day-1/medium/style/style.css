@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+}
+img {
+  height: auto;
+  width: 100%;
+}
+
+article {
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  padding: 10px;
+}
+/* Komment */
+h1 {
+  color: #444;
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: #999;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: Lato;
+  text-align: center;
+}
+
+p {
+  color: #444;
+  font-family: Merriweather;
+  line-height: 1,5;
+}
+
+a {
+  color: #444;
+}
+
+a:hover {
+  color: #999;
+}
