@@ -1,0 +1,28 @@
+body {
+  background-image: url(kepek/pattern.png);
+  color: #333;
+  font-family: 'Josefin sans', sans-serif;
+  line-height: 1.5;
+  margin: 0px;
+}
+
+h1 {
+  font-family: 'Abril Fatface'; serif;
+  text-align: center;
+}
+
+.wrap {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+header {
+  background-image: url(kepek/sunset.jpg);
+  background-position: center center;
+  background-size: cover;
+  padding-top: 100px;
+  padding-right: 20px;
+  padding-bottom: 100px;
+  padding-left: 20px;
+  color: white;
+}
