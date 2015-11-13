@@ -1,8 +1,8 @@
 body {
   background-image: url(images/pattern.png);
-  color: #337;
-  font-family: Neuton;
-  font-size: 20px;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
   line-height: 1.5;
   margin: 0px;
 }
@@ -11,12 +11,23 @@ header {
   background-image: url(images/fe1.jpg);
   background-position: center;
   background-size: cover;
-  height: 550px;
   color: white;
+  height: 550px;
+  width: auto;
+}
+
+section {
+  background-color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 h1 {
-  font-family: Alice;
+  font-family: 'Alice';
   font-size: 70px;
   line-height: 520px;
   margin: 0px;
@@ -24,22 +35,19 @@ h1 {
   text-align:center;
 }
 
-section {
-  margin-left: 90px;
-  background-color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.wrap {
-  max-width: 50%;
-  margin: auto;
-  overflow: auto;
-}
-
 h3 {
-  font-family:Alice;
-  font-size: 20px;
+  color: #337;
+  font-family: 'Alice';
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style-type: none;
 }
 
 p {
@@ -50,4 +58,14 @@ p {
 a {
   text-decoration: none;
   color: purple;
+}
+
+.wrap {
+  max-width: 40%;
+  margin: auto;
+  overflow: auto;
+}
+
+.others {
+  list-style-type: circle;
 }
