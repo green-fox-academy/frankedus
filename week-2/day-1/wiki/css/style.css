@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.main-container {
+  background: yellow;
+  order: 1;
+  width: 100%;
+}
+
+.main-sidebar {
+  background: aqua;
+  order: 0;
+  width: 176px;
+}
+
+.main-header {
+  background: purple;
+  height: 80px;
+  position: relative;
+}
+
+.main-header ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.main-header li {
+  list-style-type: none;
+}
+
+.main-header nav,
+.search {
+  position: absolute;
+}
+
+.user-menu {
+  top: 0;
+  right: 0;
+}
+
+.talk-menu {
+  bottom:0;
+  left: 0;
+}
+
+.edit-menu {
+  bottom: 0;
+  right: 300px;
+}
+
+.search {
+  bottom: 0;
+  right: 0;
+}
+
+.search input {
+  width: 300px;
+}
+
+.biography {
+  background: #f9f9f9;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+  float: right;
+  margin: 6px 0px 12px 12px;
+  padding: 25px;
+  width: 270px;
+}
+
+.main-footer {
+  background: silver;
+  height: 150px;
+}
