@@ -1,4 +1,4 @@
-def reverse(input_list):
+def reverse_list(input_list):
     output_list = []
     i = len(input_list) -1
     while i >= 0:
