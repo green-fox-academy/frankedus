@@ -11,7 +11,7 @@ for row in lottery_reader:
     for elem in drawn:
         drawn_numbers.append(int(elem))
 
-    history.append(drawn_numbers)
+    history.append(drawn_number)
 
 frequency = {}
 
