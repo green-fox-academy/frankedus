@@ -1,39 +1,45 @@
-def show_menu():
-    print('\n*** MENU ***\n')
-    print('\n1 = New game\n2 = Load game\n \n0 = Exit\n')
+from menu import *
+from player import Player
 
-def input_field():
+class Game:
+    def __init__(self):
+        self.menu = None
+        self.player = Player()
+        self.main_menu()
+
+    def not_implemented(self):
+        print('Not implemented')
+
+    def main_menu(self):
+        self.menu = Menu([
+            MenuItem(1, 'New game', self.new_game),
+            MenuItem(2, 'Load game', self.not_implemented),
+            MenuItem(0, 'Exit game', exit),
+        ])
+
+    def new_game(self):
+        self.player.set_name()
+        self.menu = Menu([
+            MenuItem(1, 'Reenter name', self.player.set_name),
+            MenuItem(2, 'Load game', self.not_implemented),
+            MenuItem(0, 'Exit game', self.exit_game)
+        ])
+
+    def exit_game(self):
+        self.menu = Menu([
+            MenuItem(1, 'Save and quit', self.not_implemented),
+            MenuItem(2, 'Quit without save', self.not_implemented),
+            MenuItem(3, 'Resume', self.not_implemented),
+        ])
+
+
+def main():
+    game = Game()
     while True:
-        try:
-            user_input = int(input('Choose a number: '))
-            break
-        except ValueError:
-            print('You entered a wrong value!')
-    return user_input
+        menu = game.menu
+        menu.show_menu()
+        choice = menu.user_input()
+        menu.choose(choice)
 
-def input_name():
-    user_input = input('Enter a name: ')
-    print('\n' + user_input)
-    print('\n1 = Reenter name\n2 = Continue\n3 = Save\n \n0 = Exit\n')
-
-def main_menu():
-    while True:
-        show_menu()
-        user_input = input_field()
-        if user_input == 1:
-            print('New game')
-            input_name()
-            input_field()
-        elif user_input == 2:
-            print('Load game')
-            print('Loading...')
-        elif user_input == 0:
-            print('Exit')
-            print('Are you sure? y/n')
-            user_input = input()
-            if user_input == 'y':
-                exit()
-            elif user_input == 'n':
-                pass
-
-main_menu()
+print('*** MENU ***' + '\n')
+main()
