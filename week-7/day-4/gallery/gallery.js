@@ -17,24 +17,31 @@ var imagesArray = ['images/DSCF2502.jpg',
 
 var currentIndex = 0;
 
+
 nextButton.addEventListener('click', function() {
   currentIndex++;
-  
+
+  var prevIndex = currentIndex - 1
+
   if (currentIndex > imagesArray.length - 1) {
     currentIndex = 0;
+    prevIndex = imagesArray.length - 1;
   }
+
   currentPic.setAttribute('src', imagesArray[currentIndex]);
-  nextButton.setAttribute('src', imagesArray[currentIndex + 1]);
-  prevButton.setAttribute('src', imagesArray[currentIndex - 1]);
+  nextButton.setAttribute('src', imagesArray[(currentIndex + 1) % imagesArray.length]);
+  prevButton.setAttribute('src', imagesArray[prevIndex]);
 
 })
 
 prevButton.addEventListener('click', function() {
   currentIndex--;
+
   if (currentIndex === -1) {
     currentIndex = imagesArray.length - 1;
   }
+
   currentPic.setAttribute('src', imagesArray[currentIndex]);
-  nextButton.setAttribute('src', imagesArray[currentIndex - 1]);
-  prevButton.setAttribute('src', imagesArray[currentIndex + 1]);
+  nextButton.setAttribute('src', imagesArray[(imagesArray.length + currentIndex + 1) % imagesArray.length]);
+  prevButton.setAttribute('src', imagesArray[(imagesArray.length + currentIndex - 1) % imagesArray.length]);
 })
