@@ -10,6 +10,7 @@ class Player:
 
     def set_name(self):
         self.name = input('Enter your name: ')
+        
         print('\n' + self.name + '\n')
 
     def get_status(self):

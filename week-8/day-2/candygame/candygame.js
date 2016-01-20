@@ -7,9 +7,10 @@ var lollipopNumber = document.querySelector('.lolli-number');
 var candyRaise = document.querySelector('.candies-raise-with');
 
 
-var candies = 4500;
-var lollipop = 200;
+var candies = 0;
+var lollipop = 0;
 var raise = 0;
+
 
 candyButton.addEventListener ('click', function() {
   candies++;
@@ -22,7 +23,7 @@ lollipopButton.addEventListener ('click', function() {
     lollipopNumber.innerText = lollipop;
     candies = candies - 10;
     candyNumber.innerText = candies;
-  };
+  }
 });
 
 setInterval(function() {

@@ -44,9 +44,6 @@ def main_menu(menu_items):
         for item in menu_items:
             if user_input == item.number:
                 
-
-
-
         if user_input == 1:
             print('New game')
             input_name()
