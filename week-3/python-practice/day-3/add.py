@@ -7,8 +7,8 @@ def add(a, b, res = None):
     return r
 
 add(1, 2)
-add(2,3)
-add(4,5)
+add(2, 3)
+add(4, 5)
 
 
 def add(a, b, res = []):
