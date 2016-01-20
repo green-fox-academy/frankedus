@@ -2,6 +2,7 @@
 
 var url = "http://localhost:3000/todos";
 var item = document.createElement('li');
+var todoContainer = document.querySelector('.todo-container')
 var addButton = document.querySelector('.add-button');
 var deleteButton = document.querySelector('.delete-button');
 var todoInput = document.querySelector('.input');
@@ -19,14 +20,14 @@ function getTodoItems(callback) {
   };
 };
 
-getTodoItems(getTodoList);
+getTodoItems(getTodoListCallback);
 
-function getTodoList(res) {
-  res.forEach(function(e) {
+function getTodoListCallback(res) {
+  res.forEach(function(item) {
     var newItem = document.createElement('p');
-    newItem.innerText = e.id + '. ' + e.text;
-    newItem.setAttribute('id', e.id)
-    document.body.appendChild(newItem);
+    newItem.innerText = item.text;
+    newItem.setAttribute('id', item.id)
+    todoContainer.appendChild(newItem);
   });
 }
 
@@ -43,6 +44,13 @@ function postItemToServer(text, callback) {
   };
 }
 
+function appendNewItem(res) {
+  var output = document.createElement('p');
+  output.innerText = res.text;
+  output.setAttribute('id', response.id)
+  todoContainer.appendChild(output);
+};
+
 function deleteTodoItem(id, callback) {
   var req = new XMLHttpRequest();
   req.open('DELETE', url+'/'+id);
@@ -57,21 +65,19 @@ function deleteTodoItem(id, callback) {
 
 function deleteCallback(res) {
   document.getElementById(res.id).remove();
-  todoInput.value = '';
 }
 
-function appendNewItem(response) {
-  var output = document.createElement('p');
-  output.innerText = response.id + '. ' + response.text;
-  output.setAttribute('id', response.id)
-  document.body.appendChild(output);
-};
 
-addButton.addEventListener('click', function () {
-  postItemToServer(todoInput.value, appendNewItem);
-  todoInput.value = '';
+todoInput.addEventListener('keypress', function (event) {
+  var keycode = event.keyCode;
+  if (keycode === 13) {
+    event.preventDefault();
+    postItemToServer(todoInput.value, appendNewItem);
+    todoInput.value = '';
+  }
 })
 
-deleteButton.addEventListener('click', function () {
-  deleteTodoItem(todoInput.value, deleteCallback);
+todoContainer.addEventListener('dblclick', function (event) {
+  var element = event.target;
+  deleteTodoItem(element.id, deleteCallback);
 })

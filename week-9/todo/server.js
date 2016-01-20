@@ -6,10 +6,6 @@ var items = require("./items.js");
 
 var app = express();
 
-items.add({text: 'Buy milk'});
-items.add({text: 'Make dinner'});
-items.add({text: 'Save the world'});
-
 // Basic middlewares
 app.use(logRequest);
 app.use(express.static("public"));

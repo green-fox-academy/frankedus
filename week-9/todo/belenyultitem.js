@@ -6,6 +6,16 @@ var TodoItem = function () {
   this.completed = false;
 }
 
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'test',
+  password: 'test',
+  database: 'todo'
+});
+
+connection.connect();
+
 TodoItem.prototype.update = function(attributes) {
   this.text = attributes.text || "";
   this.completed = !!attributes.completed;
@@ -23,10 +33,9 @@ function getItem(id) {
 }
 
 function addItem(attributes) {
-  var item = new TodoItem();
-  item.update(attributes);
-  items[item.id] = item;
-  return item;
+  connection.query('INSERT INTO todo SET ?', attributes, function(err, result){
+    if (err) throw err;
+  });
 }
 
 function removeItem(id) {
