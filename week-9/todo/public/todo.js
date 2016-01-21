@@ -3,8 +3,6 @@
 var url = "http://localhost:3000/todos";
 var item = document.createElement('li');
 var todoContainer = document.querySelector('.todo-container')
-var addButton = document.querySelector('.add-button');
-var deleteButton = document.querySelector('.delete-button');
 var todoInput = document.querySelector('.input');
 
 
@@ -47,7 +45,7 @@ function postItemToServer(text, callback) {
 function appendNewItem(res) {
   var output = document.createElement('p');
   output.innerText = res.text;
-  output.setAttribute('id', response.id)
+  output.setAttribute('id', res.id)
   todoContainer.appendChild(output);
 };
 
