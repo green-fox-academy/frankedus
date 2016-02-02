@@ -1,5 +1,8 @@
 "use-strict"
 
+var mongoClient = require("./mongoClient.js").mongoClient;
+var collectionName = "todos";
+
 var TodoItem = function () {
   this.id = nextId();
   this.text = "";
@@ -33,12 +36,18 @@ function removeItem(id) {
   delete items[id];
 }
 
-function allItems() {
-  var values = [];
-  for (var id in items) {
-    values.push(items[id]);
-  }
-  return values;
+function allItems(callback) {
+  mongoClient(function(err, db) {
+    if(err) throw err;
+
+    var collection = db.collection(collectionName)
+                       .find({})
+                       .toArray(function(err, docs) {
+                          if(err) throw err;
+                          callback(docs);
+                          db.close();
+                       });
+  });
 }
 
 module.exports = {

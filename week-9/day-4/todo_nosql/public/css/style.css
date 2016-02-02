@@ -1,0 +1,26 @@
+body {
+    background-color: #e9daac;
+    min-width: 240px;
+}
+
+button{
+  border-radius: 3vw;
+  margin: 3px;
+}
+
+input{
+  opacity: 1;
+}
+
+.main-container{
+  background-color: rgba(51, 49, 65, .65);
+  border-radius: 3vw;
+  text-align: center;
+  margin: 10vw;
+  padding: 3vw;
+}
+
+.completed{
+  text-decoration:line-through;
+  opacity: 0.7;
+}

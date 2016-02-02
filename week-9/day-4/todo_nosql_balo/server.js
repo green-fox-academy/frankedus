@@ -13,7 +13,9 @@ app.use(bodyParser.json());
 
 // GET /todos => list all todo items
 app.get("/todos", function (req, res) {
-  res.json(items.all());
+  items.all(function(docs) {
+    res.json(docs);
+  });
 });
 
 // POST /todos => create a new todo item
