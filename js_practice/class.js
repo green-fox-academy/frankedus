@@ -7,7 +7,7 @@
 'use strict';
 
 function Class(kids) {
-  this.kids = kids
+  this.kids = kids;
 
   this.mothersLove = function () {
     for (var i = 0; i < this.kids.length; i++) {
@@ -23,28 +23,28 @@ function Class(kids) {
         this.kids[i].motherslove = 100;
       }
     }
-  }
+  };
 
 
   this.updateMoney = function () {
     this.kids.forEach(function(kid) {
       kid.money += kid.motherslove;
       kid.motherslove = 0;
-    })
-  }
+    });
+  };
 
 
   this.whoIsTheOldest = function () {
     var richestChild = this.kids[0];
     for (var i = 0; i < this.kids.length; i++) {
       if (this.kids[i].money > richestChild.money) {
-        richestChild = this.kids[i]
+        richestChild = this.kids[i];
       }
     }
     var poorestChild = this.kids[0];
     for (var i = 0; i < this.kids.length; i++) {
       if (this.kids[i].money < poorestChild.money) {
-        poorestChild = this.kids[i]
+        poorestChild = this.kids[i];
       }
     }
     if (richestChild.age > poorestChild.age) {
@@ -52,17 +52,17 @@ function Class(kids) {
     } else {
       return poorestChild.name;
     }
-  }
+  };
 
   this.removeByAge = function (age) {
     var newClass = [];
     this.kids.forEach(function(kid) {
       if (kid.age !== age) {
-        newClass.push(kid)
+        newClass.push(kid);
       }
-    })
-    this.kids = newClass
-  }
+    });
+    this.kids = newClass;
+  };
 
 }
 
@@ -74,7 +74,7 @@ var kids = [
     {name: 'Kristof', age: 18, money: 100, grade: 3},
     {name: 'Edus', age: 8, money: 100, grade: 5},
     {name: 'Atus', age: 20, money: 100, grade: 4}
-]
+];
 
 var firstTableClass = new Class(kids);
 

@@ -11,16 +11,16 @@ function CarStore (cars) {
   this.cars = cars;
 
   this.addCar = function (type, price, year) {
-    this.cars.push({type: type, price: price, year: year})
-  }
+    this.cars.push({type: type, price: price, year: year});
+  };
 
   this.getSumPrice = function () {
     var carsPrice = 0;
     this.cars.forEach(function(car) {
-      carsPrice += car.price
-    })
+      carsPrice += car.price;
+    });
     return carsPrice;
-  }
+  };
 
   this.getOldestCarType = function () {
     var oldestCar = this.cars[0];
@@ -30,7 +30,7 @@ function CarStore (cars) {
       }
     }
     return oldestCar.type;
-  }
+  };
 
   this.deleteCarByType = function (type) {
     var newArrayOfCars = [];
@@ -39,8 +39,8 @@ function CarStore (cars) {
         newArrayOfCars.push(this.cars[i]);
       }
     }
-    this.cars = newArrayOfCars
-  }
+    this.cars = newArrayOfCars;
+  };
 
 }
 
