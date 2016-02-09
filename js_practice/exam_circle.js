@@ -1,15 +1,19 @@
 'use strict';
+
 function Circle(radius) {
   this.radius = radius;
+
   this.getCircumference = function () {
     return 2 * Math.PI * this.radius;
-    }
+  };
+
   this.getArea = function () {
-    return Math.pow(this.radius, 2) * Math.PI
-    }
+    return Math.pow(this.radius, 2) * Math.PI;
+  };
+
   this.toString = function () {
     return 'Radius: ' + this.radius + ', Circumference: ' + this.getCircumference() + ' Area: ' + this.getArea();
-    }
+  };
 }
 var circle = new Circle(4);
 console.log(circle.toString());
